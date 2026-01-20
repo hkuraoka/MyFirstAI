@@ -16,6 +16,7 @@ const speedSlider = document.getElementById('speedSlider');
 const speedValue = document.getElementById('speedValue');
 const startBtn = document.getElementById('startBtn');
 const pauseBtn = document.getElementById('pauseBtn');
+const resetBtn = document.getElementById('resetBtn');
 
 // ゲーム状態
 let board = [];
@@ -399,9 +400,30 @@ document.addEventListener('keydown', (e) => {
     drawBoard();
 });
 
+// リセット機能
+function resetGame() {
+    clearInterval(gameLoop);
+    isPlaying = false;
+    isPaused = false;
+    score = 0;
+    lines = 0;
+    speed = 5;
+    speedSlider.value = 5;
+    speedValue.textContent = 5;
+    updateScore();
+    initBoard();
+    currentPiece = null;
+    nextPiece = null;
+    drawBoard();
+    drawNextPiece();
+    startBtn.textContent = 'スタート';
+    pauseBtn.textContent = '一時停止';
+}
+
 // ボタンイベント
 startBtn.addEventListener('click', startGame);
 pauseBtn.addEventListener('click', togglePause);
+resetBtn.addEventListener('click', resetGame);
 
 // スピードスライダー
 speedSlider.addEventListener('input', (e) => {

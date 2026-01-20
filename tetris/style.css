@@ -131,6 +131,16 @@ button {
     box-shadow: 0 0 15px rgba(255, 107, 107, 0.7);
 }
 
+#resetBtn {
+    background: linear-gradient(135deg, #ffa500, #cc8400);
+    color: white;
+}
+
+#resetBtn:hover {
+    background: linear-gradient(135deg, #ffb732, #dd9511);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
 /* 操作説明 */
 .instructions {
     background: rgba(255, 255, 255, 0.05);
