@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>テトリス</h1>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+
+            <div class="side-panel">
+                <div class="info-box">
+                    <h3>次のブロック</h3>
+                    <canvas id="nextCanvas" width="120" height="120"></canvas>
+                </div>
+
+                <div class="info-box">
+                    <h3>スコア</h3>
+                    <p id="score">0</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>消したライン</h3>
+                    <p id="lines">0</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>スピード</h3>
+                    <div class="speed-control">
+                        <input type="range" id="speedSlider" min="1" max="10" value="5">
+                        <span id="speedValue">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn">スタート</button>
+            <button id="pauseBtn">一時停止</button>
+        </div>
+
+        <div class="instructions">
+            <h3>操作方法</h3>
+            <p>← → : 左右移動</p>
+            <p>↑ : 回転</p>
+            <p>↓ : 速く落とす</p>
+            <p>スペース : 一気に落とす</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
